@@ -1,9 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const AllTopics = () => {
+const AllTopics = ({topic}) => {
+    const {logo, name, id} = topic;
     return (
         <div>
-            <h2>this is topics page</h2>
+            <img src={logo} alt='this is an imag'></img>
+            <div>
+                <p>{name}</p>
+                <NavLink to={`../topics/${id}`}><button>start quiz</button></NavLink>
+            </div>
         </div>
     );
 };
