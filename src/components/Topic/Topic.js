@@ -2,8 +2,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Question from '../Question/Question';
-// let correct = [];
-// let incorrect = [];
+
 const Topic = () => {
     const data = useLoaderData();
     const topic = data.data;
