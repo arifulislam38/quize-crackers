@@ -8,8 +8,7 @@ const Header = () => {
             <h1 className='text-6xl text-blue-700'>Exam-Era</h1>
           </div>
           <div className='text-xl text-blue-700 flex gap-4'>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/topics'>Topics</NavLink>
+            <NavLink to='/home'>Home</NavLink>
             <NavLink to='/statics'>Statistics</NavLink>
             <NavLink to='/blog'>Blog</NavLink>
             <NavLink to='/about'>About</NavLink>

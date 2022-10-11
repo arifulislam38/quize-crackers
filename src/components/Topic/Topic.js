@@ -9,8 +9,8 @@ const Topic = () => {
     // console.log('insiede topic',topic);
     const {name} = topic;
     return (
-        <div>
-            <h2>inside the <span className='text-xl text-green-600'>{name}</span> page</h2>
+        <div className='mt-12'>
+            <h2 className='my-7 text-4xl text-green-600'><span className=' text-blue-600'>{name}</span> questions</h2>
             {
                 questions.map(question => <Question key={question.id} question={question}></Question>)
             }

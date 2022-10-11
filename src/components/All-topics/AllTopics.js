@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const AllTopics = ({topic}) => {
-    const {logo, name, id} = topic;
+const AllTopics = ({topics}) => {
+    const {logo, name, id} = topics;
     return (
         <div className='shadow shadow-slate-300 p-2 rounded'>
             <img className='bg-gray-200 rounded' src={logo} alt='this is an imag'></img>

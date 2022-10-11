@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { allContext } from '../../App';
 import AllTopics from '../All-topics/AllTopics';
 
 const Main = () => {
-    const data = useLoaderData();
-    const topics = data.data;
-    // console.log(topics);
+    const datas = useLoaderData();
+    // const datas = useContext(allContext);
+    console.log(datas);
+    const topics = datas.data;
+   
     return (
         <div className='flex gap-8 justify-center items-center w-3/4 mx-auto mt-32'>
             {
-                topics.map(topic => <AllTopics key={topic.id} topic={topic}></AllTopics>)
+                topics.map(topic => <AllTopics key={topic.id} topics={topic}></AllTopics>)
             }
         </div>
     );

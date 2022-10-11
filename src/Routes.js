@@ -1,28 +1,36 @@
 import { createBrowserRouter } from "react-router-dom";
-import AllTopics from "./components/All-topics/AllTopics";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Main from "./components/Main/Main";
 import Root from "./components/Root/Root";
+import Statics from "./components/Statics/Statics";
 import Topic from "./components/Topic/Topic";
+
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
-                loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
-                element: <Main></Main>
+                loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),
+                element: <Main></Main>,
             },
             {
-                path: 'topics',
-                element: <AllTopics></AllTopics>
+                path: '/home',
+                loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),
+                element: <Main></Main>,
             },
             {
-                path: '/topics/:id',
-                loader: ({params})=> fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
+                path: 'topics/:id',
+                loader: async ({params})=> fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`),
                 element: <Topic></Topic>,
-            }
+            },
+           {
+            path: 'statics',
+            element: <Statics></Statics>,
+           }
         ],
     }
 ]);
