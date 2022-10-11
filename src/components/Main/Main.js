@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { allContext } from '../../App';
 import AllTopics from '../All-topics/AllTopics';
 
 const Main = () => {
     const datas = useLoaderData();
-    // const datas = useContext(allContext);
     console.log(datas);
     const topics = datas.data;
    

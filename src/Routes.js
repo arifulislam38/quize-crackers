@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Main from "./components/Main/Main";
 import Root from "./components/Root/Root";
-import Statics from "./components/Statics/Statics";
+import Statistics from "./components/Statistics/Statistics";
+
 import Topic from "./components/Topic/Topic";
 
 
@@ -28,8 +29,8 @@ const routes = createBrowserRouter([
                 element: <Topic></Topic>,
             },
            {
-            path: 'statics',
-            element: <Statics></Statics>,
+            path: 'statistics',
+            element: <Statistics></Statistics>,
            }
         ],
     }
