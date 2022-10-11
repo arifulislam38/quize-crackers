@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import AllCategory from "./components/AllCategory/AllCategory";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Main from "./components/Main/Main";
-import Reacts from "./components/Reacts/Reacts";
 import Root from "./components/Root/Root";
 import Statistics from "./components/Statistics/Statistics";
 
@@ -31,19 +29,9 @@ const routes = createBrowserRouter([
                 element: <Topic></Topic>,
             },
            {
-            path: 'statistics',
+            path: '/statistics',
+            loader: async()=> fetch('https://openapi.programming-hero.com/api/quiz'),
             element: <Statistics></Statistics>,
-            children:[
-                {
-                    path: '/statistics',
-                    loader: async()=> fetch('https://openapi.programming-hero.com/api/quiz'),
-                    element: <AllCategory></AllCategory>
-                },
-                {
-                    path: '/statistics/react',
-                    element: <Reacts></Reacts>
-                }
-            ],
            }
         ],
     }

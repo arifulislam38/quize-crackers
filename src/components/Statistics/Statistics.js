@@ -1,19 +1,23 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Statistics = () => {
-    
+    const data = useLoaderData();
+    const allCategory = data.data;
     return (
-        <div>
-            <h1>this is statistics page</h1>
-            <div className='flex justify-evenly items-center bg-slate-200 shadow shadow-slate-300 p-4'>
-                <NavLink to='/statistics'>All Category</NavLink>
-                <NavLink to='/statistics/react'>React</NavLink>
-                <NavLink to='/statistics/js'>JS</NavLink>
-                <NavLink to='/statistics/css'>CSS</NavLink>
-                <NavLink to='/statistics/git'>Git</NavLink>
-            </div>
-            <Outlet></Outlet>
+        <div className='w-3/4 mx-auto h-2/3 flex flex-col items-center'>
+             <p className='text-3xl font-semibold mb-6 mt-6'>Total Category in this page</p>
+            
+            <LineChart width={800} height={400} data={allCategory}>
+                 <CartesianGrid strokeDasharray="3 3" />
+                 <XAxis dataKey="name" />
+                 <YAxis />
+                 <Tooltip />
+                 <Legend />
+                 <Line type="monotone" dataKey="total" stroke="#8884d8" activeDot={{ r: 8 }} />
+            </LineChart>
+        
         </div>
     );
 };
