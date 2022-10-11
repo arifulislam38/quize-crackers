@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Question from '../Question/Question';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Topic = () => {
     const data = useLoaderData();
     const topic = data.data;
@@ -12,6 +15,32 @@ const Topic = () => {
     const [correct, setcorrect] = useState([]);
     const [incorrect, setincorrect] = useState([]);
     const [attempt, setattempt] = useState([]);
+
+    const succesToast = () =>{
+        toast.success('Your ans is right', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+    };
+
+    const wrongToast = () =>{
+        toast.success('Ops! its a wrong answer', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+    }
    
     
     const ansCount = (select, corrected, id) =>{
@@ -22,11 +51,13 @@ const Topic = () => {
             if(select === corrected){
                 const totalCorrect = [...correct, select];
                 setcorrect(totalCorrect);
+                succesToast();
             }
             else{
                 if(incorrect.indexOf(id) <0 ){
                     const totalinCorrect = [...incorrect, id];
                     setincorrect(totalinCorrect);
+                    wrongToast();
                 }
             }
         }
@@ -39,6 +70,8 @@ const Topic = () => {
     
 
     const {name} = topic;
+
+
     return (
         <div className='mt-12'>
             <h2 className='my-7 text-4xl text-green-600'><span className=' text-blue-600'>{name}</span> questions</h2>
