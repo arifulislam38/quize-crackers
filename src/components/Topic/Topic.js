@@ -40,6 +40,19 @@ const Topic = () => {
             progress: undefined,
             theme: "light",
             });
+    };
+
+    const showAns = (correctAnswer) =>{
+        toast.success( correctAnswer, {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
    
     
@@ -83,7 +96,7 @@ const Topic = () => {
                </div>
             </div>
             {
-                questions.map(question => <Question key={question.id} question={question} ansCount={ansCount}></Question>)
+                questions.map(question => <Question key={question.id} question={question} ansCount={ansCount} showAns={showAns}></Question>)
             }
             
         </div>
