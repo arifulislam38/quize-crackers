@@ -7,7 +7,7 @@ const Main = () => {
     const topics = datas.data;
    
     return (
-        <div className='flex gap-8 justify-center items-center w-3/4 mx-auto mt-32'>
+        <div className='md:flex gap-8 justify-center items-center w-3/4 mx-auto mt-32'>
             {
                 topics.map(topic => <AllTopics key={topic.id} topics={topic}></AllTopics>)
             }

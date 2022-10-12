@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Question from '../Question/Question';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Topic = () => {
@@ -19,7 +19,7 @@ const Topic = () => {
     const succesToast = () =>{
         toast.success('Your ans is right', {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -32,7 +32,7 @@ const Topic = () => {
     const wrongToast = () =>{
         toast.success('Ops! its a wrong answer', {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -75,16 +75,17 @@ const Topic = () => {
     return (
         <div className='mt-12'>
             <h2 className='my-7 text-4xl text-green-600'><span className=' text-blue-600'>{name}</span> questions</h2>
-            {
-                questions.map(question => <Question key={question.id} question={question} ansCount={ansCount}></Question>)
-            }
-            <div className='fixed top-28 right-10 w-48 h-44 bg-slate-200 rounded shadow-md shadow-slate-500 p-2 text-start flex items-center justify-center'>
+            <div className='md:fixed sm:static top-28 right-10 md:w-48 md:h-44 sm:m-3 bg-slate-200 rounded shadow-md shadow-slate-500 p-2 text-start flex items-center justify-center'>
                <div>
                     <h2 className='font-bold text-xl text-blue-500 mb-2'>Total attempt: {attempt.length}</h2>
                     <h2 className='font-bold text-xl text-gray-600 mb-2'>Total correct: {correct.length}</h2>
                     <h2 className='font-bold text-xl text-gray-600 mb-2'>total wrong: {incorrect.length}</h2>
                </div>
             </div>
+            {
+                questions.map(question => <Question key={question.id} question={question} ansCount={ansCount}></Question>)
+            }
+            
         </div>
     );
 };
