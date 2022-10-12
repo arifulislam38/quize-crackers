@@ -17,8 +17,6 @@ const Header = () => {
               <NavLink to='/statistics' className={({isActive}) => isActive ? 'text-red-500' : 'text-blue-700'}>Statistics</NavLink>
 
               <NavLink to='/blog' className={({isActive}) => isActive ? 'text-red-500' : 'text-blue-700'}>Blog</NavLink>
-
-              <NavLink to='/about' className={({isActive}) => isActive ? 'text-red-500' : 'text-blue-700'}>About</NavLink>
           </div>
           <div className='md:hidden h-6 w-6' onClick={() => setOpen(!open)}>
             {
