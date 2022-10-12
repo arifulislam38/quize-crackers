@@ -7,6 +7,7 @@ This website is made with (react js) , here are some details about what i use in
 **react-router-dom**
 **recharts**
 **hero icons**
+**load data by API**
 **designed with (tailwind css)**
 
 # you can ans a topic of programming by yourself
