@@ -7,7 +7,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
     return (
-        <nav className={`flex justify-between items-center bg-slate-300 h-[10vh] px-10 shadow-gray-300 ${open? 'mb-32' : 'mb-1'}`}>
+        <nav className={`flex justify-between items-center bg-slate-300 h-[10vh] px-10 shadow-gray-300 ${open? 'mb-32' : 'mb-1'} border-b-2 border-gray-400`}>
           <div>
             <h1 className='lg:text-5xl sm:text-4xl text-2xl text-blue-700 sm:text-start'>Exam-Era</h1>
           </div>

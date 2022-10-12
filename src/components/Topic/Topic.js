@@ -11,6 +11,8 @@ const Topic = () => {
     const topic = data.data;
     const questions = data.data.questions;
 
+    const {name} = topic;
+
    
     const [correct, setcorrect] = useState([]);
     const [incorrect, setincorrect] = useState([]);
@@ -77,24 +79,18 @@ const Topic = () => {
 
        }
         
-        console.log(correct)
     };
 
     
 
-    const {name} = topic;
+   
 
 
     return (
         <div className='mt-12'>
             <h2 className='my-7 text-4xl text-green-600'><span className=' text-blue-600'>{name}</span> questions</h2>
-            <div className='md:fixed sm:static top-28 right-10 md:w-48 md:h-44 sm:m-3 bg-slate-200 rounded shadow-md shadow-slate-500 p-2 text-start flex items-center justify-center'>
-               <div>
-                    <h2 className='font-bold text-xl text-blue-500 mb-2'>Total attempt: {attempt.length}</h2>
-                    <h2 className='font-bold text-xl text-gray-600 mb-2'>Total correct: {correct.length}</h2>
-                    <h2 className='font-bold text-xl text-gray-600 mb-2'>total wrong: {incorrect.length}</h2>
-               </div>
-            </div>
+            
+            <h2 className='flex justify-evenly mb-4 text-xl font-semibold'><span className='text-slate-600'>Total attempt: {attempt.length}</span><span className='text-blue-500'>Total correct: {correct.length}</span><span className='text-red-500'>Total Wrong: {incorrect.length}</span></h2>
             {
                 questions.map(question => <Question key={question.id} question={question} ansCount={ansCount} showAns={showAns}></Question>)
             }

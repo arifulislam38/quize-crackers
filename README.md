@@ -3,7 +3,7 @@
 
 This website is made with (react js) , here are some details about what i use in this project
 
-**react js**
+**react js** 
 **react-router-dom**
 **recharts**
 **hero icons**
@@ -12,4 +12,9 @@ This website is made with (react js) , here are some details about what i use in
 
 # you can ans a topic of programming by yourself
 # you can also count right and wrong ans in questioning page
-# here you can see a grap chart in statistics page 
+# here you can see a graph chart in statistics page 
+
+
+# Here is the code link ['https://github.com/programming-hero-web-course2/b6-quiz-crackerz-arifulislam38']
+
+# Live site link ['https://exam-era-123.netlify.app/']
